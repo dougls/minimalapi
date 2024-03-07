@@ -1,6 +1,10 @@
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 WebApplication app = builder.Build();
 
-app.MapGet("/greeting", () => "aws w/ .NET");
+app.MapGet("/", () => "GET no kong");
 
-app.Run("http://*:80");
+app.MapGet("/status", () => "GET Status no kong");
+
+app.MapPost("/novo-status", () => "POST Novo Status no Kong");
+
+app.Run("http://0.0.0.0:8080");
